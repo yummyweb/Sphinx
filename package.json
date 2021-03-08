@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release": "standard-version"
+    "compile": "node src/run.js"
   },
   "type": "module",
   "keywords": [],
@@ -12,8 +12,5 @@
   "license": "ISC",
   "dependencies": {
     "@babel/generator": "^7.13.9"
-  },
-  "devDependencies": {
-    "standard-version": "^9.1.1"
   }
 }
