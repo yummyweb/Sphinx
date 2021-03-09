@@ -46,6 +46,11 @@ const ExpressionStatement = (obj, props) => ({
     }, 
 })
 
+const Identifier = (name) => ({
+    type: "Identifier",
+    name,
+})
+
 const FUNCTION = "func"
 
 const isFunction = line => line.includes(FUNCTION)
@@ -68,13 +73,25 @@ const parseProgram = (sourceCode, ast) => {
 
             for (let lineno = i+1; lineno < lines.length; lineno += 1) {
                 const tokens = lines[lineno].split(" ")
+                let declarationStatement = lines[lineno-1].split(" ")
+                let arguements = []
+
                 if (tokens[0] === "}") {
                     break
                 }
-                else {
-                    const varDecleration = parseVar(tokens, ast)
-                    block.body.push(varDecleration)
+                if (declarationStatement[2] === '(') {
+                    declarationStatement.map((v, i) => {
+                        if (i > 2) {
+                            arguements.push(v)
+                        }
+                    })
+                    arguements = arguements.filter(arg => arg !== ')' && arg !== '{')
+                    arguements.map(arg => {
+                        declaration.params.push(Identifier(arg))
+                    })
                 }
+                const varDecleration = parseVar(tokens, ast)
+                block.body.push(varDecleration)
             }
             ast.program.body.push(declaration)
         }

@@ -3,7 +3,7 @@ const num = 4;
 const checked = true;
 console.log(hi);
 
-function john() {
+function john(greeting, fret, chit) {
   const variable = "variable";
 }
 
