@@ -10,7 +10,7 @@ A simple and effective programming language which transpiles to JavaScript.
 2. Number
 3. Boolean
 
-### Collective Data Types
+### Collection Data Types
 
 1. Arrays
 2. Ion
