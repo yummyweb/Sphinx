@@ -4,11 +4,16 @@ A simple and effective programming language which transpiles to JavaScript.
 
 ## Language Features
 
-### Data Types
+### Primitive Data Types
 
 1. String
 2. Number
 3. Boolean
+
+### Collective Data Types
+
+1. Arrays
+2. Ion
 
 ### Variable Assignment
 
